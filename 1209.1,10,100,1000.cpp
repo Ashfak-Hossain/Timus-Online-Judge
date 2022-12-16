@@ -13,22 +13,32 @@ int main()
     // Code Start From Here
 
     int testCase;
+
     cin >> testCase;
 
-    long number{0};
-    long double sqrtAns{0};
-    double test{0};
+    double number;
 
-    for (size_t i = 0; i < testCase; i++)
+    for (int i = 0; i < testCase; i++)
     {
         cin >> number;
 
-        sqrtAns = sqrt(8 * number - 7); // From triangle number formula
+        if (i > 0)
 
-        if (modf(sqrtAns, &test) == 0) // the modf function to check if the sqrt is a perfect square
-            cout << "1 ";
+            if (sqrt(8.0 * number - 7) == (int)sqrt(8.0 * number - 7)) //  From triangle number formula
+                                                                       //  checking if the sqrt is a perfect square
+                cout << " 1";
+
+            else
+
+                cout << " 0";
+
+        else if (sqrt(8.0 * number - 7) == (int)sqrt(8.0 * number - 7))
+
+            cout << "1";
+
         else
-            cout << "0 ";
+
+            cout << "0";
     }
 
     return 0;
